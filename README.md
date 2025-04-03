@@ -1,12 +1,18 @@
-# Hotwire Turbo Example
+# Hotwire Cache Repro
 
-A simple example demonstrating Hotwired Turbo frames for navigation between pages.
+The [Turbo handbook](https://turbo.hotwired.dev/handbook/building) states:
 
-## Features
+> When navigating by history (via Restoration Visits), Turbo Drive will restore the page from cache without loading a fresh copy from the network, if possible.
 
-- Two endpoints with similar HTML structure
-- Navigation between pages using Turbo frames
-- Current page link is grayed out
+This behavior works as expected:
+
+> Otherwise, during standard navigation (via Application Visits), Turbo Drive will immediately restore the page from cache and display it as a preview while simultaneously loading a fresh copy from the network. This gives the illusion of instantaneous page loads for frequently accessed locations.
+
+This behavior does not work as expected:
+
+1. `/page1` loaded after a second (expected)
+2. `/page2` navigated to after a second (expected)
+3. `/page1` clicked again. No preview is shown and the page is loaded after a second (not expected)
 
 ## Setup and Run
 
@@ -30,18 +36,3 @@ A simple example demonstrating Hotwired Turbo frames for navigation between page
    ```
    http://localhost:5000/
    ```
-
-## Troubleshooting
-
-If you encounter an error like `ImportError: cannot import name 'url_quote' from 'werkzeug.urls'`, make sure you're using the exact versions specified in requirements.txt. The app requires Flask 2.0.1 with Werkzeug 2.0.3.
-
-## How it Works
-
-This example uses Hotwire Turbo frames to handle navigation between pages without full page reloads.
-
-Each page contains:
-- A `<turbo-frame>` with the ID "main-content"
-- Two navigation links within the frame
-- The current page's link is disabled and grayed out
-
-When clicking a link within a Turbo frame, Turbo will only replace the content of the frame instead of loading the entire page, resulting in a smoother user experience. 

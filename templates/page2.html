@@ -13,8 +13,8 @@
     
     <turbo-frame id="main-content">
         <div class="nav">
-            <a href="/page1">Page 1</a>
-            <a href="/page2" class="disabled">Page 2</a>
+            <a target="main-content" data-turbo-action="advance" href="/page1">Page 1</a>
+            <a target="main-content" data-turbo-action="advance" href="/page2" class="disabled">Page 2</a>
         </div>
         
         <div class="content">
