@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotwire Turbo Example - Page 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
+	<meta name="turbo-prefetch" content="false">
+</head>
+<body>
+    <h1>Hotwire Turbo Example</h1>
+    
+    <turbo-frame id="main-content">
+        <div class="nav">
+            <a href="/page1" class="disabled">Page 1</a>
+            <a href="/page2">Page 2</a>
+        </div>
+        
+        <div class="content">
+            <h2>Page 1</h2>
+            <p>This is the content of page 1.</p>
+        </div>
+    </turbo-frame>
+</body>
+</html> 
