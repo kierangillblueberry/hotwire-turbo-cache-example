@@ -1,6 +1,6 @@
 # Hotwire Cache Repro
 
-The [Turbo handbook](https://turbo.hotwired.dev/handbook/building) states:
+The [Turbo handbook](https://turbo.hotwired.dev/handbook/building#understanding-caching) states:
 
 > When navigating by history (via Restoration Visits), Turbo Drive will restore the page from cache without loading a fresh copy from the network, if possible.
 
